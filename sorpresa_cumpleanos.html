@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="claude:viewport-fit-sides" content="cover">
+  <title>Tu sorpresa de cumpleaños</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Nunito:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="sorpresa_cumpleanos.css">
+  <script src="sorpresa_cumpleanos.js" defer></script>
+</head>
+
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="corazon" viewBox="0 0 24 24">
+        <path
+          d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+      </symbol>
+      <symbol id="estrella" viewBox="0 0 24 24">
+        <path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.8-6.3 3.8 1.7-7L2 9.2l7.1-.6L12 2z" />
+      </symbol>
+      <symbol id="flor" viewBox="0 0 24 24">
+        <g fill="currentColor">
+          <ellipse cx="12" cy="6.2" rx="3.4" ry="4.6" />
+          <ellipse cx="12" cy="6.2" rx="3.4" ry="4.6" transform="rotate(72 12 12)" />
+          <ellipse cx="12" cy="6.2" rx="3.4" ry="4.6" transform="rotate(144 12 12)" />
+          <ellipse cx="12" cy="6.2" rx="3.4" ry="4.6" transform="rotate(216 12 12)" />
+          <ellipse cx="12" cy="6.2" rx="3.4" ry="4.6" transform="rotate(288 12 12)" />
+        </g>
+        <circle cx="12" cy="12" r="3" style="fill:var(--gold)" />
+      </symbol>
+      <symbol id="sol" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="5" />
+        <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path
+            d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1" />
+        </g>
+      </symbol>
+    </defs>
+  </svg>
+
+  <canvas id="confeti" aria-hidden="true"></canvas>
+
+  <main class="wrap">
+    <header class="hero" id="inicio">
+      <svg class="deco d1 i" aria-hidden="true">
+        <use href="#flor" />
+      </svg>
+      <svg class="deco d2 i" aria-hidden="true">
+        <use href="#estrella" />
+      </svg>
+      <svg class="deco d3 i" aria-hidden="true">
+        <use href="#estrella" />
+      </svg>
+      <svg class="deco d4 i" aria-hidden="true">
+        <use href="#flor" />
+      </svg>
+      <svg class="deco d5 i" aria-hidden="true">
+        <use href="#estrella" />
+      </svg>
+      <svg class="deco d6 i" aria-hidden="true">
+        <use href="#flor" />
+      </svg>
+      <div class="contenido">
+        <h1>¡Feliz cumpleaños, <span class="nombre" data-nombre></span>!</h1>
+        <p class="sub">Hoy celebramos a una persona que es mucho más que mi prima: eres como una segunda mamá y alguien
+          muy importante para mí.</p>
+        <button class="btn grande" id="abrir" type="button">Abrir tu sorpresa</button>
+      </div>
+    </header>
+
+    <div id="contenido" hidden>
+      <section class="seccion" id="carta" aria-labelledby="t-carta">
+        <div class="adorno" aria-hidden="true"><svg class="i">
+            <use href="#estrella" />
+          </svg><svg class="i">
+            <use href="#flor" />
+          </svg><svg class="i">
+            <use href="#estrella" />
+          </svg></div>
+        <h2 id="t-carta">Una carta para ti</h2>
+        <article class="carta" id="cartaTexto"></article>
+      </section>
+
+      <section class="seccion" aria-labelledby="t-especial">
+        <h2 id="t-especial">Cosas que hacen que seas tan especial</h2>
+        <div class="tarjetas">
+          <div class="tarjeta"><span class="ico"><svg class="i" aria-hidden="true">
+                <use href="#corazon" />
+              </svg></span>
+            <p>Te agradezo que siempre me soprtas a pesar de lo desordenado que soy.</p>
+          </div>
+          <div class="tarjeta"><span class="ico"><svg class="i" aria-hidden="true">
+                <use href="#sol" />
+              </svg></span>
+            <p>.</p>Me aconsejas, me cuidas y también me aguantas: eso te hace única.
+          </div>
+          <div class="tarjeta"><span class="ico"><svg class="i" aria-hidden="true">
+                <use href="#flor" />
+              </svg></span>
+            <p>Gracias por estar, incluso en los días difíciles.</p>
+          </div>
+          <div class="tarjeta"><span class="ico"><svg class="i" aria-hidden="true">
+                <use href="#estrella" />
+              </svg></span>
+            <p>Tienes un corazón enorme y una forma única de cuidar.</p>
+          </div>
+          <div class="recuerdo"><small>Un recuerdo </small>
+            <p id="recuerdoTexto"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="seccion" aria-labelledby="t-sorpresas">
+        <h2 id="t-sorpresas">Dos sorpresas más</h2>
+        <div class="acciones">
+          <button class="btn" id="btnAbrazo" type="button" aria-expanded="false" aria-controls="panelAbrazo">Un abrazo
+            para ti</button>
+          <button class="btn ghost" id="btnDeseo" type="button" aria-expanded="false" aria-controls="panelDeseo">Pide un
+            deseo</button>
+        </div>
+
+        <div class="panel" id="panelAbrazo" hidden>
+          <svg class="latido i" aria-hidden="true">
+            <use href="#corazon" />
+          </svg>
+          <p class="mensaje">Cierra los ojos un segundo e imagina que estamos en familia Tú, felipe, Franco y RIchard.
+            Gracias por todo.</p>
+        </div>
+
+        <div class="panel" id="panelDeseo" hidden>
+          <div class="torta" aria-hidden="false">
+            <div class="velas" id="velas"></div>
+            <div class="piso piso-1"></div>
+            <div class="piso piso-2"></div>
+            <div class="plato"></div>
+          </div>
+          <p class="consigna" id="consigna">Cierra los ojos, pide un deseo y toca cada vela para apagarla.</p>
+          <div class="deseo-final" id="deseoFinal" aria-live="polite"></div>
+          <button class="btn ghost" id="encender" type="button" hidden>Encender las velas otra vez</button>
+        </div>
+      </section>
+
+      <section class="seccion" aria-labelledby="t-cierre">
+        <div class="cierre">
+          <svg class="i grande" aria-hidden="true">
+            <use href="#estrella" />
+          </svg>
+          <h2 id="t-cierre">Gracias por ser mi prima y como una segunda mamá para mí. ¡Feliz cumpleaños, Mili!</h2>
+          <div class="tarjeta tarjeta-promesa">
+            <span class="ico"><svg class="i" aria-hidden="true">
+                <use href="#estrella" />
+              </svg></span>
+            <p>Pronto, cuando alcance grandes logros, ustedes estarán conmigo en lo más alto y ya no tendrán que trabajar.</p>
+          </div>
+          <div class="acciones">
+            <button class="btn" id="btnConfeti" type="button">Reproducir la sorpresa</button>
+            <button class="btn ghost" id="btnInicio" type="button">Volver al principio</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+
+</html>
