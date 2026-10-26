@@ -1,6 +1,6 @@
 /* ====== Personaliza aquí ====== */
 const CONFIG = {
-  nombre: "Milagros",
+  nombre: "Mili",
   recuerdo: "[ESCRIBE AQUÍ UN RECUERDO BONITO QUE COMPARTAN]",
 };
 const RECUERDO_GENERAL = "Gracias por los momentos compartidos, los grandes y los pequeños.";
